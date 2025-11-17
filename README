@@ -1,0 +1,16 @@
+Running instructions:
+
+    While inside the ./soln directory, all that is needed is to run "make" within the terminal. This will subsequently compile and link the necessary files to create out server execuable in the ./server directory. Afterwards, we will observe two gnome terminals bein run, one for the server executable and one for the client. The plotter will then open and the following instructions may be used to navigate and utilize the plotter:
+
+        - Press W/A/S/D to move the viewport Up/Left/Down/Right respectively
+        - Press R in order to remove all points on map
+        - Press Q or E to zoom in or out of the map respectively, while keeping cursor at identical position
+        - Click and drag map in order to move around faster for ease of access
+        - Left click upon two points anywhere upon the map in order to set destination points
+        - Scroll in or out in order to zoom in or out at a much larger scale
+
+    After closing the program, we may run "make clean" in order to remove all object and pipe files within our solution directory, if it hasn't been done automatically.
+
+Notes and Assumptions:
+
+    It is assumed that the client is sending route requests in two lines without the addition of the "R" char. The server will noy send the number of waypoints nd does not expect any acknowledgement of this after sending the coordinates of either waypoint. The server will solely send the "E" char after writing all waypoints for a specific route to the outpipe. Upon closing the plotter window, the client will write a single "Q" char to the pipe, triggering the server to clean up and quit, if read from the pipe.
